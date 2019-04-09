@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="
+        http://jboss.org/schema/arquillian
+        http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <container qualifier="payara-embedded" default="true">
+        <configuration>
+            <property name="bindHttpPort">7070</property>
+        </configuration>
+    </container>
+
+    <container qualifier="payara-remote">
+        <configuration>
+            <property name="adminHttps">true</property>
+            <property name="adminHost">localhost</property>
+            <property name="adminPort">4848</property>
+            <property name="adminUser">admin</property>
+            <property name="adminPassword">admin</property>
+        </configuration>
+    </container>
+
+</arquillian>

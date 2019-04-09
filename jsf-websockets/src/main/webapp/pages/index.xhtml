@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Ping</title>
+</h:head>
+<f:view>
+    <h1>Welcome to Ping</h1>
+
+    <h:form>
+        <ul>
+            <li>Message: <h:outputLabel value="#{indexBackingBean.helloMessage}"/></li>
+            <li>Number: <h:outputLabel id="numberLabel" value="#{indexBackingBean.randomNumber}"/></li>
+        </ul>
+
+        <br />
+
+        <h:commandButton value="New number">
+            <f:ajax render="numberLabel"/>
+        </h:commandButton>
+    </h:form>
+
+    <y:websocket
+
+    <script type="text/javascript">
+        var wsUri = "ws://" + document.location.hostname + ":" + document.location.port + document.location.pathname + "number";
+        console.log(wsUri);
+        var websocket = new WebSocket(wsUri);
+
+        websocket.onmessage = function(event) {
+            console.log(event.data);
+        }
+
+        websocket.onopen = function(event) {
+            console.log(event);
+        }
+    </script>
+
+</f:view>
+</html>
