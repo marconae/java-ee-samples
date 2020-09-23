@@ -12,7 +12,7 @@
         <module>jsf-websockets</module>
         <module>jsf-websockets-buggy</module>
         <module>jpa-request-scoped-em</module>
-        <module>testcontainers</module>
+        <module>login-test</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -42,6 +42,12 @@
                 <artifactId>javaee-api</artifactId>
                 <version>${dep.ee.version}</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>${dep.primefaces.version}</version>
             </dependency>
 
             <dependency>
@@ -118,7 +124,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <failOnMissingWebXml>false</failOnMissingWebXml>
+
         <dep.ee.version>8.0</dep.ee.version>
+        <dep.primefaces.version>8.0</dep.primefaces.version>
 
         <dep.guava.version>25.0</dep.guava.version>
         <dep.lombok.version>1.18.4</dep.lombok.version>

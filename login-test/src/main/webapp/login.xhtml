@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Login Test</title>
+</h:head>
+<f:view>
+    <h1>Login Test - Login</h1>
+
+    <h:form id="login">
+        <p:messages id="messages" globalOnly="true"/>
+
+        <h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
+
+            <p:outputLabel for="user" value="User"/>
+            <p:inputText id="user" value="#{loginBacking.user}"/>
+            <p:message for="user"/>
+
+            <p:outputLabel for="password" value="Password"/>
+            <p:inputText type="password" id="password" value="#{loginBacking.password}"/>
+            <p:message for="password"/>
+
+            <p:commandButton id="submit" update="@form"
+                             value="Login" action="#{loginBacking.submit}"/>
+        </h:panelGrid>
+    </h:form>
+
+</f:view>
+</html>
